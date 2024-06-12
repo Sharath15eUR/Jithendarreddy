@@ -1,0 +1,21 @@
+vim filename.txt
+
+for copying the content given in question 
+go to the questions file using vim questions_file.txt and press escape 
+type 'v' for selecting the lines and press 'y' for copy and open story.txt
+using 'vim story.txt' press escape(normal mode) press 'p' for paste
+
+to save this press escape and type ':wq+enter' 
+
+to replace fox with wolf command is ':%s/fox/wolf/g'
+
+to search press escape and type '/field'
+
+again go the questions file select the text as mentioned below and paste it in
+story.txt 
+
+to replace all the vowels ':%s/[a,e,i,o,u]/x/g'
+
+
+
+
