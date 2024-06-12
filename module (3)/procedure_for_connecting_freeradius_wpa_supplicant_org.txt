@@ -1,0 +1,58 @@
+wpa_supplicant.conf
+
+
+ctrl_interface=/var/run/wpa_supplicant
+update_config=1
+
+network={
+       ssid="Airtel_chen_9369"
+       key_mgmt=WPA-EAP
+       eap=PEAP
+       identity="steve"
+       password="testing"
+       phase2="auth=MSCHAPV2"
+}
+
+
+freeradius
+
+
+clients.conf
+
+client localhost {
+        ipaddr = 127.0.0.1
+        secret = testing123
+        proto = *
+        require_message_authenticator = no
+        nas_type = other
+}
+
+
+users
+
+steve   Cleartext-Password := "testing"
+
+
+
+in freeradius terminal commands
+sudo /etc/init.d/freeradius start
+
+
+in wpa termianl
+
+eapol_test -c /etc/wpa_supplicant-2.10/wpa_supplicant/wpa_supplicantm.conf -a 127.0.0.1 
+-s testing123 -N 30 -S local > file.txt
+
+logs for eapol
+
+
+
+logs for freeradius is
+ sudo /etc/init.d/freeradius stop
+sudo freeradius -X > freeradius_debug.log 2>&1
+
+again eopl command 
+
+stop the server
+
+view the log freeradius_debug.log
