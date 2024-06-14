@@ -1,0 +1,55 @@
+using valgrind debugging 
+
+for the function test1
+
+the problem is with free(); placement
+after using free() function again we are using pointer ptr
+
+solution:
+use free() function at the end to avoid memory leaks
+
+
+
+
+for the function test2
+
+here there is no free() function in the test2 
+due to this there occurs memory loss(definitely loss)
+
+solution:
+use free function() at end
+
+
+
+for the function test3
+
+here free function is used inside the for loop
+due to this there occurs heap lost
+
+solution:
+use free() function outside the for loop
+
+
+for the function test4
+
+here ptr is assigned to the NULL due to this there occurs
+segmentation fault 
+
+solution:
+remove the statement ptr=NULL;
+use free() at the end
+
+
+
+
+for the function test 5
+
+here there is no checking of data is equal to null or not
+there is no free() function for both two dimensional array
+
+
+solution:
+check whether the ptr data is equal to null or not
+and use proper free() functions 
+
+
